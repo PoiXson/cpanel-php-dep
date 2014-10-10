@@ -7,6 +7,8 @@ BuildArch       : noarch
 
 Group           : Servers/Basic Web Server
 License         : None
+Packager        : PoiXson <support@poixson.com>
+URL             : http://yum.poixson.com/
 
 
 
