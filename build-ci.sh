@@ -13,12 +13,13 @@ else
 fi
 
 
-NAME="cpanel-php-dep"
 NAME4="cpanel-php54-dep"
 NAME5="cpanel-php55-dep"
 NAME6="cpanel-php56-dep"
 [ -z "${WORKSPACE}" ] && WORKSPACE=`pwd`
-rm -vf "${WORKSPACE}/${NAME}"-*.noarch.rpm
+rm -vf "${WORKSPACE}/${NAME4}"-*.noarch.rpm
+rm -vf "${WORKSPACE}/${NAME5}"-*.noarch.rpm
+rm -vf "${WORKSPACE}/${NAME6}"-*.noarch.rpm
 
 
 title "Build.."
