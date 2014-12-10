@@ -25,11 +25,18 @@ Version         : 5.5.%{BUILD_NUMBER}
 Requires        : cpanel-php55
 Provides        : php
 
+%package -n cpanel-php56-dep
+Summary         : Virtual package provides proper dependency resolution for php packages when using cpanel-php56
+Version         : 5.6.%{BUILD_NUMBER}
+Requires        : cpanel-php54
+Provides        : php
+
 
 
 %description
 %description -n cpanel-php54-dep
 %description -n cpanel-php55-dep
+%description -n cpanel-php56-dep
 
 
 
@@ -49,4 +56,5 @@ fi
 
 %files -n cpanel-php54-dep
 %files -n cpanel-php55-dep
+%files -n cpanel-php56-dep
 
