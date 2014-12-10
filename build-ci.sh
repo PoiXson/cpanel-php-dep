@@ -14,6 +14,9 @@ fi
 
 
 NAME="cpanel-php-dep"
+NAME4="cpanel-php54-dep"
+NAME5="cpanel-php55-dep"
+NAME6="cpanel-php56-dep"
 [ -z "${WORKSPACE}" ] && WORKSPACE=`pwd`
 rm -vf "${WORKSPACE}/${NAME}"-*.noarch.rpm
 
@@ -23,8 +26,19 @@ title "Build.."
 
 
 title "Deploy.."
-cp -fv "${WORKSPACE}/${NAME}"-*.noarch.rpm "${DL_PATH}/" || exit 1
-latest_version "${DL_PATH}/${NAME}-*.noarch.rpm"         || exit 1
+cp -fv "${WORKSPACE}/${NAME4}"-*.noarch.rpm "${DL_PATH}/" || exit 1
+cp -fv "${WORKSPACE}/${NAME5}"-*.noarch.rpm "${DL_PATH}/" || exit 1
+cp -fv "${WORKSPACE}/${NAME6}"-*.noarch.rpm "${DL_PATH}/" || exit 1
+# php 5.4
+latest_version "${DL_PATH}/${NAME4}-*.noarch.rpm"         || exit 1
 echo "Latest version: "${LATEST_FILE}
-ln -fs "${LATEST_FILE}" "${YUM_PATH}/${NAME}.noarch.rpm" || exit 1
+ln -fs "${LATEST_FILE}" "${YUM_PATH}/${NAME4}.noarch.rpm" || exit 1
+# php 5.5
+latest_version "${DL_PATH}/${NAME5}-*.noarch.rpm"         || exit 1
+echo "Latest version: "${LATEST_FILE}
+ln -fs "${LATEST_FILE}" "${YUM_PATH}/${NAME5}.noarch.rpm" || exit 1
+# php 5.6
+latest_version "${DL_PATH}/${NAME6}-*.noarch.rpm"         || exit 1
+echo "Latest version: "${LATEST_FILE}
+ln -fs "${LATEST_FILE}" "${YUM_PATH}/${NAME6}.noarch.rpm" || exit 1
 
